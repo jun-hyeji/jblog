@@ -110,7 +110,7 @@ UPDATE
 			SET
 				blogTitle='�������� ��α� �Դϴ�.',logoFile=''
 			WHERE
-				userNo = 33;
+				userNo = 725;
 
 delete from users;
 delete from blog;
