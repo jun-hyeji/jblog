@@ -92,10 +92,10 @@ CREATE TABLE comments (
 );
 
 
-INSERT INTO users(userNo,id,userName,password,joinDate) values(seq_users_no.nextval,'wlgud30','������','wlgud12',sysdate);
-INSERT INTO category(cateNo,userNo,cateName,description,regDate) values(seq_category_no.nextval,33,'a','aa',sysdate);
-INSERT INTO post(postNo,cateNo,postTitle,postContent,regDate) values(seq_post_no.nextval,3,'post2','post content2',sysdate);
-INSERT INTO comments(cmtNo,postNo,userNo,cmtContent,regDate) values(seq_comments_no.nextval,1,34,'cmt222222',sysdate);
+INSERT INTO users(userNo,id,userName,password,joinDate) values(seq_users_no.nextval,'wjsgpwl','wjsgpwl7','wjsgpwl725',sysdate);
+INSERT INTO category(cateNo,userNo,cateName,description,regDate) values(seq_category_no.nextval,725,'a','aa',sysdate);
+INSERT INTO post(postNo,cateNo,postTitle,postContent,regDate) values(seq_post_no.nextval,3,'post2','post content1',sysdate);
+INSERT INTO comments(cmtNo,postNo,userNo,cmtContent,regDate) values(seq_comments_no.nextval,1,34,'cmt11',sysdate);
 SELECT 
 				cateNo,userNo,cateName,description,regDate
 			FROM
