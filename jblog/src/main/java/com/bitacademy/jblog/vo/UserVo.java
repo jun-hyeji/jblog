@@ -2,21 +2,13 @@ package com.bitacademy.jblog.vo;
 
 import java.util.Date;
 
+
 public class UserVo {
 	
 	private Long userNo;
-
-	@NotEmpty
-	@Length(min=4,max=20,message = "최소4글자부터 최대20글자 까지 입력 가능합니다.")
-	@NotBlank
 	private String id;
-	@NotEmpty
-	@Length(min=2,max=20,message = "최소2글자부터 최대20글자 까지 입력 가능합니다.")
-	@NotBlank
 	private String userName;
-	@NotEmpty
-	@Length(min=4,max=20,message = "최소4글자부터 최대20글자 까지 입력 가능합니다.")
-	@NotBlank
+	
 	private String password;
 	private Date joinDate;
 	

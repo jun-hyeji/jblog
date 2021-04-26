@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,11 +32,11 @@ import com.bitacademy.jblog.vo.UserVo;
 public class UserController {
 	
 	@Autowired
-	UserService uService;
+	UsersService uService;
 	@Autowired
 	BlogService bService;
 	
-	private static Logger logger = LoggerFactory.getLogger(UsersController.class);
+	private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@RequestMapping({"","/"})
 	public String Main() {
@@ -59,7 +59,7 @@ public class UserController {
 			session.setAttribute("authUser", authUser);
 			return "redirect:/";
 		}else {
-			attributes.addFlashAttribute("msg", "로그인실패<br/> 아이디/패스워드를 확인해 주세요.");
+			attributes.addFlashAttribute("msg", "로그인 실패! <br/> 아이디/패스워드를 확인해 주세요.");
 			return "redirect:/login";
 		}
 	}
@@ -70,7 +70,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/join",method=RequestMethod.POST)
-	public String userJoin(@ModelAttribute @Valid UserVo userVo,BindingResult result,Model model) {
+	public String userJoin(@ModelAttribute UserVo userVo,BindingResult result,Model model) {
 		
 		if(result.hasErrors()) {
 			List<ObjectError> errors = result.getAllErrors();

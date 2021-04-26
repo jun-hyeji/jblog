@@ -19,11 +19,11 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		logger.debug("AuthInterceptor");
-		//세션 확인(로그인 체크)
+		//	세션 확인(로그인 체크)
 		HttpSession session = request.getSession();
 		UserVo authUser = null;
 		
-		//세션 객체 얻어오기
+		//	세션 객체 얻어오기
 		if(session != null) {
 			authUser = (UserVo) session.getAttribute("authUser");
 		}

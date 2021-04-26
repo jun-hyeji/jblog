@@ -1,11 +1,15 @@
 package com.bitacademy.jblog.repository;
 
+import java.util.HashMap;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bitacademy.jblog.vo.BlogVo;
 import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
+import java.util.Map;
 
 public class UserDaoImpl implements UserDao {
 
@@ -55,16 +59,6 @@ public class UserDaoImpl implements UserDao {
 		String id = sqlSession.selectOne("user.selectId", userNo);
 		return id;
 	}
+	 
 
-	@Override
-	public com.bitacademy.jblog.repository.UserVo login(String id, String pw) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int insert(com.bitacademy.jblog.repository.UserVo vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
